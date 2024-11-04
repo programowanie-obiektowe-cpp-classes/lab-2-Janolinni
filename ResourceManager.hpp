@@ -9,6 +9,10 @@ class ResourceManager
     {
 
     };
+    ResourceManager(const ResourceManager& adres2) : resource(new Resource(*adres2.resource))
+    {
+
+    };
 
     ResourceManager(const ResourceManager& adres2)
     {
