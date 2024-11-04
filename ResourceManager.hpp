@@ -20,6 +20,16 @@ class ResourceManager
         return resource -> get();
     };
 
+    ResourceManager& operator = (const ResourceManager& adres2)
+    {
+        if(this != &adres2)
+        {
+            delete resource;
+            resource = adres2.resource;
+        }
+        return *this;
+    }
+
     ~ResourceManager()
     {
         delete resource;
