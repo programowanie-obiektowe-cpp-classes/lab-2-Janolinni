@@ -9,14 +9,10 @@ class ResourceManager
     {
 
     };
-    ResourceManager(const ResourceManager& adres2) : resource(new Resource(*adres2.resource))
-    {
 
-    };
-
-    ResourceManager(const ResourceManager& adres2)
+    ResourceManager(const ResourceManager& adres) : resource(new Resource(*adres.resource))
     {
-        resource = adres2.resource;
+        
     };
 
     double const get() 
@@ -24,12 +20,12 @@ class ResourceManager
         return resource -> get();
     };
 
-    ResourceManager& operator = (const ResourceManager& adres2)
+    ResourceManager& operator = (const ResourceManager& adres)
     {
-        if(this != &adres2)
+        if(this != &adres)
         {
             delete resource;
-            resource = adres2.resource;
+            resource = adres.resource;
         }
         return *this;
     }
