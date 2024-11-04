@@ -25,7 +25,7 @@ class ResourceManager
         if(this != &adres)
         {
             delete resource;
-            resource = adres.resource;
+            resource = new Resource(*adres.resource);
         }
         return *this;
     }
